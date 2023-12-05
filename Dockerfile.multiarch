@@ -1,5 +1,5 @@
 # Use the Debian image as the base image
-FROM --platform=${TARGETPLATFORM:-linux/arm32v7} debian:bullseye
+FROM --platform=linux/arm/v7 node:12-bullseye
 
 # Define build arguments
 ARG BUILD_DATE
