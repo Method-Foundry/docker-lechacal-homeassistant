@@ -12,19 +12,20 @@ RUN apt-get update && \
         g++ \
         gcc \
         libc6-dev \
-        linux-headers-amd64 \
+        linux-headers-arm32v4 \
         libudev-dev \
         nodejs \
         npm \
         && rm -rf /var/lib/apt/lists/*
 
-# Change to the application directory and install the 'serialport' package and other Node.js dependencies
-RUN cd /opt/lechacal && \
-    npm install serialport && \
-    npm install
-
-# Set the working directory for the application
+# Change to the application directory
 WORKDIR /opt/lechacal
+
+# Install the 'serialport' package and other Node.js dependencies
+RUN npm install serialport
+
+# Install other Node.js dependencies
+RUN npm install
 
 # Define the default command to run when the container starts
 CMD ["/bin/sh", "/opt/lechacal/server.sh"]
