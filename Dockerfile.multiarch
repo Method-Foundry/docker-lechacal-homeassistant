@@ -31,8 +31,8 @@ RUN cd /opt/lechacal && \
     apt-get update && \
     apt-get install -y nodejs npm && \
     npm install serialport --build-from-source && \
-    apt-get remove -y nodejs npm && \
-    apt-get autoremove -y && \
+#    apt-get remove -y nodejs npm && \
+#    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Change to the application directory and install other Node.js dependencies
@@ -40,8 +40,8 @@ RUN cd /opt/lechacal && \
     apt-get update && \
     apt-get install -y nodejs npm && \
     npm install && \
-    apt-get remove -y nodejs npm && \
-    apt-get autoremove -y && \
+#    apt-get remove -y nodejs npm && \
+#    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Set the working directory for the application
