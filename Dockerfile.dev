@@ -15,15 +15,7 @@ RUN apt-get update && \
         g++ \
         gcc \
         libc6-dev \
-        linux-headers-armhf \
         libudev-dev \
-        && rm -rf /var/lib/apt/lists/*
-
-# Install Node.js and npm from the official Debian repositories
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        nodejs \
-        npm \
         && rm -rf /var/lib/apt/lists/*
 
 # Change to the application directory
