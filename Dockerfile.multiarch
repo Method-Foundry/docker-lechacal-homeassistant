@@ -1,4 +1,4 @@
-FROM --platform=${TARGETPLATFORM:-linux/amd64} node:12-alpine
+FROM --platform=${TARGETPLATFORM:-linux/amd64} debian:bullseye
 
 ARG BUILD_DATE
 ARG VERSION
@@ -11,7 +11,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 ADD src/ /opt/lechacal
 
-RUN apk add --no-cache --virtual \
+RUN apt update && apt install -y \
     .gyp \
     python \
     make \
