@@ -1,5 +1,5 @@
 # Use the Debian image as the base image
-FROM --platform=${TARGETPLATFORM:-linux/amd64} debian:bullseye
+FROM debian:bullseye
 
 # Copy the application source code into the container's /opt/lechacal directory
 COPY src/ /opt/lechacal
