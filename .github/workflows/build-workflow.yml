@@ -30,7 +30,7 @@ jobs:
           fi
           echo ::set-output name=build_date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           echo ::set-output name=docker_platforms::linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/amd64
-          echo ::set-output name=docker_image::gtricot/lechacal-mqtt
+          echo ::set-output name=docker_image::ironmikej79/lechacal-mqtt
       -
         name: Checkout
         uses: actions/checkout@v1
