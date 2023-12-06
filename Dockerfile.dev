@@ -10,10 +10,12 @@ COPY src/ /opt/lechacal
 # Install build dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        .gyp \
         python \
         make \
         g++ \
         gcc \
+        python3-rpi.gpio \
         libc6-dev \
         libudev-dev \
         && rm -rf /var/lib/apt/lists/*
